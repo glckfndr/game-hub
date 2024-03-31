@@ -6,7 +6,7 @@ import {
   FaLinux,
   FaAndroid,
 } from "react-icons/fa";
-import { MdPhoneAndroid, MdPhoneIphone } from "react-icons/md";
+import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 
@@ -31,7 +31,7 @@ const PlatformIconList = ({ platforms }: Props) => {
     android: FaAndroid,
   };
   return (
-    <HStack marginY={2}>
+    <HStack marginY={1}>
       {platforms.map((platform) => (
         <Icon
           key={platform.slug}
