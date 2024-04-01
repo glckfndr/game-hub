@@ -1,4 +1,5 @@
 import useGenres, { Genre } from "../hooks/useGenres";
+
 import {
   Button,
   HStack,
