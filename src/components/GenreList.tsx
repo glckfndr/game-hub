@@ -2,6 +2,7 @@ import useGenres, { Genre } from "../hooks/useGenres";
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -20,17 +21,23 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
   if (error) return null;
   if (isLoading) return <Spinner />;
   return (
-    <div>
+    <>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {genres.map((gen) => (
           <ListItem key={gen.id} paddingY="5px">
             <HStack>
               <Image
+                objectFit="cover"
                 src={getCroppedImageUrl(gen.image_background)}
                 boxSize="32px"
                 borderRadius={8}
               ></Image>
               <Button
+                whiteSpace="normal"
+                textAlign="left"
                 variant="link"
                 fontSize="lg"
                 fontWeight={gen.id === selectedGenre?.id ? "bold" : "normal"}
@@ -42,7 +49,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
           </ListItem>
         ))}
       </List>
-    </div>
+    </>
   );
 };
 
